@@ -1,94 +1,160 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Volim te princezo - Minecraft Heart</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
-    body {
-      margin: 0;
-      background-color: #1e1e1e;
-      display: flex;
-      height: 100vh;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Press Start 2P', cursive;
-      user-select: none;
-    }
-
-    .heart {
-      position: relative;
-      width: 320px;
-      height: 320px;
-      background:
-        /* top left and right blocks */
-        linear-gradient(45deg, #b22222 25%, transparent 25%) top left,
-        linear-gradient(-45deg, #b22222 25%, transparent 25%) top right,
-        linear-gradient(45deg, transparent 75%, #b22222 75%) bottom left,
-        linear-gradient(-45deg, transparent 75%, #b22222 75%) bottom right;
-      background-color: #d32f2f;
-      background-repeat: no-repeat;
-      background-size: 50% 50%;
-      border: 12px solid #7f0000;
-      box-shadow:
-        inset 0 0 8px #ff0000,
-        0 0 10px #ff4444,
-        4px 4px 0 #7f0000;
-      border-radius: 48% 48% 50% 50% / 60% 60% 40% 40%;
-      filter: drop-shadow(0 0 3px #ff4444);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 12px;
-      box-sizing: border-box;
-    }
-
-    .heart::before, .heart::after {
-      content: "";
-      position: absolute;
-      width: 160px;
-      height: 160px;
-      background-color: #d32f2f;
-      border: 12px solid #7f0000;
-      border-radius: 50%;
-      box-shadow:
-        inset 0 0 8px #ff0000,
-        0 0 10px #ff4444;
-      top: -80px;
-    }
-    .heart::after {
-      right: 0;
-      top: -80px;
-      left: 160px;
-    }
-    .heart::before {
-      left: 0;
-      top: -80px;
-    }
-
-    .text {
-      color: #ffd700;
-      font-size: 18px;
-      text-align: center;
-      text-shadow:
-        1px 1px 0 #7f0000,
-        2px 2px 0 #7f0000;
-      padding: 20px;
-      user-select: none;
-      line-height: 1.2;
-      max-width: 280px;
-      font-weight: 900;
-    }
-  </style>
+    <title>Minecraft Heart - Volim te princezo</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Minecraft', sans-serif;
+        }
+        
+        .heart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .heart {
+            display: grid;
+            grid-template-columns: repeat(8, 30px);
+            grid-template-rows: repeat(8, 30px);
+            margin-bottom: 20px;
+            image-rendering: pixelated;
+        }
+        
+        .pixel {
+            width: 30px;
+            height: 30px;
+        }
+        
+        /* Exact colors from the Minecraft heart image */
+        .dark-red {
+            background-color: #aa0000;
+        }
+        
+        .red {
+            background-color: #ff5555;
+        }
+        
+        .text {
+            color: #ffffff;
+            font-size: 32px;
+            text-shadow: 3px 3px 0 #555555;
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+        
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('https://github.com/IdreesInc/Minecraft-Font/raw/master/Minecraft.woff') format('woff');
+        }
+    </style>
 </head>
 <body>
-  <div class="heart">
-    <div class="text">
-      Volim te,<br />
-      princezo
+    <div class="heart-container">
+        <div class="heart">
+            <!-- Row 1 -->
+            <div class="pixel"></div>
+            <div class="pixel red"></div>
+            <div class="pixel red"></div>
+            <div class="pixel"></div>
+            <div class="pixel red"></div>
+            <div class="pixel red"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            
+            <!-- Row 2 -->
+            <div class="pixel red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel red"></div>
+            <div class="pixel"></div>
+            
+            <!-- Row 3 -->
+            <div class="pixel red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel red"></div>
+            
+            <!-- Row 4 -->
+            <div class="pixel red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel red"></div>
+            
+            <!-- Row 5 -->
+            <div class="pixel"></div>
+            <div class="pixel red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel red"></div>
+            <div class="pixel"></div>
+            
+            <!-- Row 6 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel dark-red"></div>
+            <div class="pixel red"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            
+            <!-- Row 7 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel red"></div>
+            <div class="pixel red"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            
+            <!-- Row 8 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+        </div>
+        
+        <div class="text">VOLIM TE PRINCEZO</div>
     </div>
-  </div>
+
+    <script>
+        // Add subtle heartbeat animation
+        const heart = document.querySelector('.heart');
+        let scale = 1;
+        let growing = true;
+        
+        setInterval(() => {
+            scale = growing ? scale + 0.005 : scale - 0.005;
+            if (scale >= 1.05) growing = false;
+            if (scale <= 0.98) growing = true;
+            heart.style.transform = `scale(${scale})`;
+        }, 50);
+    </script>
 </body>
 </html>
