@@ -1,160 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="sr">
 <head>
-    <title>Minecraft Heart - Volim te princezo</title>
-    <style>
-        body {
-            background-color: #1a1a1a;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Minecraft', sans-serif;
-        }
-        
-        .heart-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .heart {
-            display: grid;
-            grid-template-columns: repeat(8, 30px);
-            grid-template-rows: repeat(8, 30px);
-            margin-bottom: 20px;
-            image-rendering: pixelated;
-        }
-        
-        .pixel {
-            width: 30px;
-            height: 30px;
-        }
-        
-        /* Exact colors from the Minecraft heart image */
-        .dark-red {
-            background-color: #aa0000;
-        }
-        
-        .red {
-            background-color: #ff5555;
-        }
-        
-        .text {
-            color: #ffffff;
-            font-size: 32px;
-            text-shadow: 3px 3px 0 #555555;
-            margin-top: 20px;
-            letter-spacing: 2px;
-        }
-        
-        @font-face {
-            font-family: 'Minecraft';
-            src: url('https://github.com/IdreesInc/Minecraft-Font/raw/master/Minecraft.woff') format('woff');
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Volim te, princezo</title>
+  <style>
+    @font-face {
+      font-family: 'Minecraftia';
+      src: url('https://fonts.cdnfonts.com/s/19693/Minecraftia-Regular.woff') format('woff');
+    }
+
+    body {
+      background-color: #1e1e1e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .heart-container {
+      position: relative;
+      width: 300px;
+    }
+
+    .heart-container img {
+      width: 100%;
+      display: block;
+    }
+
+    .heart-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Minecraftia', sans-serif;
+      font-size: 16px;
+      color: white;
+      text-shadow: 2px 2px 0 black;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <div class="heart-container">
-        <div class="heart">
-            <!-- Row 1 -->
-            <div class="pixel"></div>
-            <div class="pixel red"></div>
-            <div class="pixel red"></div>
-            <div class="pixel"></div>
-            <div class="pixel red"></div>
-            <div class="pixel red"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            
-            <!-- Row 2 -->
-            <div class="pixel red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel red"></div>
-            <div class="pixel"></div>
-            
-            <!-- Row 3 -->
-            <div class="pixel red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel red"></div>
-            
-            <!-- Row 4 -->
-            <div class="pixel red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel red"></div>
-            
-            <!-- Row 5 -->
-            <div class="pixel"></div>
-            <div class="pixel red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel red"></div>
-            <div class="pixel"></div>
-            
-            <!-- Row 6 -->
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel dark-red"></div>
-            <div class="pixel red"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            
-            <!-- Row 7 -->
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel red"></div>
-            <div class="pixel red"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            
-            <!-- Row 8 -->
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-        
-        <div class="text">VOLIM TE PRINCEZO</div>
-    </div>
-
-    <script>
-        // Add subtle heartbeat animation
-        const heart = document.querySelector('.heart');
-        let scale = 1;
-        let growing = true;
-        
-        setInterval(() => {
-            scale = growing ? scale + 0.005 : scale - 0.005;
-            if (scale >= 1.05) growing = false;
-            if (scale <= 0.98) growing = true;
-            heart.style.transform = `scale(${scale})`;
-        }, 50);
-    </script>
+  <div class="heart-container">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABGElEQVR4nO3XMQEAAAgDoL7/aMNYFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwDWn+EoAAW6SKfgAAAAASUVORK5CYII=" alt="Minecraft Heart">
+    <div class="heart-text">Volim te, princezo</div>
+  </div>
 </body>
 </html>
