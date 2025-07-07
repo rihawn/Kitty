@@ -1,168 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>To My Sweet Cat 💜</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Comic Sans MS', cursive;
-      background: linear-gradient(to bottom right, #a684e3, #d1b3ff);
-      color: #fff;
-      text-align: center;
-      padding: 2rem;
-      overflow-x: hidden;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>I Love You Princess - Serbian Minecraft Heart</title>
+<style>
+  body {
+    margin: 0;
+    background: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Minecraft', monospace, monospace;
+  }
 
-    .container {
-      max-width: 600px;
-      margin: auto;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    }
+  .heart {
+    position: relative;
+    width: 200px;
+    height: 180px;
+    background:
+      linear-gradient(45deg, #b22222 25%, transparent 25%),
+      linear-gradient(-45deg, #b22222 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #b22222 75%),
+      linear-gradient(-45deg, transparent 75%, #b22222 75%);
+    background-size: 40px 40px;
+    background-repeat: repeat;
+    border-radius: 40% 40% 45% 45% / 55% 55% 50% 50%;
+    box-shadow:
+      inset 0 0 10px #7f0000,
+      0 0 20px #ff4444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 1rem;
+    user-select: none;
+  }
 
-    h1 {
-      font-size: 2.5rem;
-      color: #fff;
-    }
-
-    .message {
-      font-size: 1.2rem;
-      margin: 1rem 0;
-      line-height: 1.8;
-    }
-
-    .cat img {
-      width: 200px;
-      margin: 1rem 0;
-      border-radius: 50%;
-      border: 3px solid white;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
-    }
-
-    button {
-      background-color: #b366ff;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      font-size: 1.1rem;
-      border-radius: 30px;
-      cursor: pointer;
-      margin-top: 1rem;
-      transition: background-color 0.3s;
-    }
-
-    button:hover {
-      background-color: #9933ff;
-    }
-
-    #loveResponse {
-      font-size: 1.3rem;
-      margin-top: 1rem;
-      color: #fff8f8;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .hearts {
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-
-    .heart {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: pink;
-      transform: rotate(45deg);
-      animation: floatUp 5s linear infinite;
-    }
-
-    .heart::before,
-    .heart::after {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: pink;
-      border-radius: 50%;
-    }
-
-    .heart::before {
-      top: -10px;
-      left: 0;
-    }
-
-    .heart::after {
-      left: -10px;
-      top: 0;
-    }
-
-    @keyframes floatUp {
-      0% {
-        transform: translateY(100vh) rotate(45deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-10vh) rotate(45deg);
-        opacity: 0;
-      }
-    }
-  </style>
+</style>
 </head>
 <body>
-  <div class="hearts" id="hearts"></div>
 
-  <div class="container">
-    <h1>🐾 To My Purrfect Girl 🐾</h1>
-    <p class="message">
-      My sweetest little kitty,<br />
-      You make my world brighter with every soft meow and cuddle.<br />
-      I’ll always give you head pats, treats, and love – forever.<br />
-      Your master loves you endlessly 💜
-    </p>
+<div class="heart">
+  Volim te,<br />princezo
+</div>
 
-    <div class="cat">
-      <img src="https://i.imgur.com/1R9l9ZC.png" alt="Cute cat" />
-    </div>
-
-    <button onclick="showLove()">Meow for Love 💖</button>
-
-    <p id="loveResponse" class="hidden">*purrs softly and nuzzles you* 😽💗</p>
-  </div>
-
-  <script>
-    function showLove() {
-      document.getElementById("loveResponse").classList.remove("hidden");
-    }
-
-    // Floating hearts
-    const heartsContainer = document.getElementById('hearts');
-    function createHeart() {
-      const heart = document.createElement('div');
-      heart.className = 'heart';
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = (3 + Math.random() * 2) + 's';
-      heartsContainer.appendChild(heart);
-      setTimeout(() => heart.remove(), 5000);
-    }
-    setInterval(createHeart, 400);
-  </script>
 </body>
 </html>
