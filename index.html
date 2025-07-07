@@ -1,41 +1,155 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>Volim te, princezo</title>
-  <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      background-color: #0d0d0d;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      font-family: 'Minecraft', sans-serif;
-      color: #fff;
-    }
-
-    .heart {
-      background: url('https://i.imgur.com/mJrXz7U.png') no-repeat center;
-      background-size: contain;
-      width: 200px;
-      height: 180px;
-      image-rendering: pixelated;
-      margin-bottom: 20px;
-    }
-
-    .text {
-      font-size: 24px;
-      color: #ff4c4c;
-      text-shadow: 2px 2px #000;
-      text-align: center;
-    }
-  </style>
+    <title>Volim te princezo</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Minecraft', sans-serif;
+        }
+        
+        .heart {
+            display: grid;
+            grid-template-columns: repeat(9, 40px);
+            grid-template-rows: repeat(8, 40px);
+            margin-bottom: 30px;
+        }
+        
+        .pixel {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .red {
+            background-color: #ff5555;
+        }
+        
+        .dark-red {
+            background-color: #aa0000;
+        }
+        
+        .text {
+            color: white;
+            font-size: 32px;
+            text-shadow: 3px 3px 0 #555;
+            margin-top: 20px;
+        }
+        
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('Minecraft.woff2') format('woff2');
+        }
+    </style>
 </head>
 <body>
-  <div class="heart"></div>
-  <div class="text">Volim te,<br>princezo</div>
+    <div class="heart">
+        <!-- Row 1 -->
+        <div class="pixel"></div>
+        <div class="pixel red"></div>
+        <div class="pixel red"></div>
+        <div class="pixel"></div>
+        <div class="pixel red"></div>
+        <div class="pixel red"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        
+        <!-- Row 2 -->
+        <div class="pixel red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel red"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        
+        <!-- Row 3 -->
+        <div class="pixel red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel red"></div>
+        <div class="pixel"></div>
+        
+        <!-- Row 4 -->
+        <div class="pixel red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel red"></div>
+        
+        <!-- Row 5 -->
+        <div class="pixel"></div>
+        <div class="pixel red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel red"></div>
+        
+        <!-- Row 6 -->
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel red"></div>
+        <div class="pixel"></div>
+        
+        <!-- Row 7 -->
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel dark-red"></div>
+        <div class="pixel red"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        
+        <!-- Row 8 -->
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel red"></div>
+        <div class="pixel red"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+    </div>
+    
+    <div class="text">Volim te princezo</div>
+    
+    <script>
+        // Add slight animation
+        document.querySelector('.text').addEventListener('mouseover', function() {
+            this.style.transform = 'scale(1.1)';
+            this.style.transition = 'transform 0.3s';
+        });
+        
+        document.querySelector('.text').addEventListener('mouseout', function() {
+            this.style.transform = 'scale(1)';
+        });
+    </script>
 </body>
 </html>
