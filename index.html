@@ -16,14 +16,16 @@
         
         .heart {
             display: grid;
-            grid-template-columns: repeat(9, 40px);
-            grid-template-rows: repeat(8, 40px);
+            grid-template-columns: repeat(8, 30px);
+            grid-template-rows: repeat(8, 30px);
             margin-bottom: 30px;
+            image-rendering: pixelated;
         }
         
         .pixel {
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
         }
         
         .red {
@@ -39,11 +41,12 @@
             font-size: 32px;
             text-shadow: 3px 3px 0 #555;
             margin-top: 20px;
+            letter-spacing: 2px;
         }
         
         @font-face {
             font-family: 'Minecraft';
-            src: url('Minecraft.woff2') format('woff2');
+            src: url('https://github.com/IdreesInc/Minecraft-Font/raw/master/Minecraft.woff') format('woff');
         }
     </style>
 </head>
@@ -58,7 +61,6 @@
         <div class="pixel red"></div>
         <div class="pixel"></div>
         <div class="pixel"></div>
-        <div class="pixel"></div>
         
         <!-- Row 2 -->
         <div class="pixel red"></div>
@@ -68,7 +70,6 @@
         <div class="pixel dark-red"></div>
         <div class="pixel dark-red"></div>
         <div class="pixel red"></div>
-        <div class="pixel"></div>
         <div class="pixel"></div>
         
         <!-- Row 3 -->
@@ -80,11 +81,9 @@
         <div class="pixel dark-red"></div>
         <div class="pixel dark-red"></div>
         <div class="pixel red"></div>
-        <div class="pixel"></div>
         
         <!-- Row 4 -->
         <div class="pixel red"></div>
-        <div class="pixel dark-red"></div>
         <div class="pixel dark-red"></div>
         <div class="pixel dark-red"></div>
         <div class="pixel dark-red"></div>
@@ -100,9 +99,8 @@
         <div class="pixel dark-red"></div>
         <div class="pixel dark-red"></div>
         <div class="pixel dark-red"></div>
-        <div class="pixel dark-red"></div>
-        <div class="pixel dark-red"></div>
         <div class="pixel red"></div>
+        <div class="pixel"></div>
         
         <!-- Row 6 -->
         <div class="pixel"></div>
@@ -110,9 +108,8 @@
         <div class="pixel red"></div>
         <div class="pixel dark-red"></div>
         <div class="pixel dark-red"></div>
-        <div class="pixel dark-red"></div>
-        <div class="pixel dark-red"></div>
         <div class="pixel red"></div>
+        <div class="pixel"></div>
         <div class="pixel"></div>
         
         <!-- Row 7 -->
@@ -120,9 +117,8 @@
         <div class="pixel"></div>
         <div class="pixel"></div>
         <div class="pixel red"></div>
-        <div class="pixel dark-red"></div>
-        <div class="pixel dark-red"></div>
         <div class="pixel red"></div>
+        <div class="pixel"></div>
         <div class="pixel"></div>
         <div class="pixel"></div>
         
@@ -131,25 +127,26 @@
         <div class="pixel"></div>
         <div class="pixel"></div>
         <div class="pixel"></div>
-        <div class="pixel red"></div>
-        <div class="pixel red"></div>
+        <div class="pixel"></div>
         <div class="pixel"></div>
         <div class="pixel"></div>
         <div class="pixel"></div>
     </div>
     
-    <div class="text">Volim te princezo</div>
+    <div class="text">VOLIM TE PRINCEZO</div>
     
     <script>
-        // Add slight animation
-        document.querySelector('.text').addEventListener('mouseover', function() {
-            this.style.transform = 'scale(1.1)';
-            this.style.transition = 'transform 0.3s';
-        });
+        // Add pulsing animation
+        const text = document.querySelector('.text');
+        let scale = 1;
+        let growing = true;
         
-        document.querySelector('.text').addEventListener('mouseout', function() {
-            this.style.transform = 'scale(1)';
-        });
+        setInterval(() => {
+            scale = growing ? scale + 0.01 : scale - 0.01;
+            if (scale >= 1.1) growing = false;
+            if (scale <= 0.95) growing = true;
+            text.style.transform = `scale(${scale})`;
+        }, 50);
     </script>
 </body>
 </html>
