@@ -1,71 +1,94 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Minecraft Heart - Volim te, princezo</title>
-<style>
-  /* Minecraft pixel art heart style */
-  body {
-    background: #1a1a1a;
-    color: #d9d9d9;
-    font-family: 'Minecraft', monospace, monospace;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Volim te princezo - Minecraft Heart</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-  /* Pixel heart container */
-  .heart {
-    display: grid;
-    grid-template-columns: repeat(8, 20px);
-    grid-template-rows: repeat(7, 20px);
-    gap: 2px;
-    margin-bottom: 40px;
-  }
+    body {
+      margin: 0;
+      background-color: #1e1e1e;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Press Start 2P', cursive;
+      user-select: none;
+    }
 
-  .pixel {
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
-  }
+    .heart {
+      position: relative;
+      width: 320px;
+      height: 320px;
+      background:
+        /* top left and right blocks */
+        linear-gradient(45deg, #b22222 25%, transparent 25%) top left,
+        linear-gradient(-45deg, #b22222 25%, transparent 25%) top right,
+        linear-gradient(45deg, transparent 75%, #b22222 75%) bottom left,
+        linear-gradient(-45deg, transparent 75%, #b22222 75%) bottom right;
+      background-color: #d32f2f;
+      background-repeat: no-repeat;
+      background-size: 50% 50%;
+      border: 12px solid #7f0000;
+      box-shadow:
+        inset 0 0 8px #ff0000,
+        0 0 10px #ff4444,
+        4px 4px 0 #7f0000;
+      border-radius: 48% 48% 50% 50% / 60% 60% 40% 40%;
+      filter: drop-shadow(0 0 3px #ff4444);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px;
+      box-sizing: border-box;
+    }
 
-  /* Red shades for Minecraft heart */
-  .red1 { background: #b22222; }
-  .red2 { background: #ff0000; }
-  .red3 { background: #800000; }
+    .heart::before, .heart::after {
+      content: "";
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      background-color: #d32f2f;
+      border: 12px solid #7f0000;
+      border-radius: 50%;
+      box-shadow:
+        inset 0 0 8px #ff0000,
+        0 0 10px #ff4444;
+      top: -80px;
+    }
+    .heart::after {
+      right: 0;
+      top: -80px;
+      left: 160px;
+    }
+    .heart::before {
+      left: 0;
+      top: -80px;
+    }
 
-  /* Minecraft style font fallback */
-  @font-face {
-    font-family: 'Minecraft';
-    src: url('https://cdn.jsdelivr.net/gh/lefou/minecraft_font/Minecraft.ttf') format('truetype');
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    color: #ff5555;
-    text-shadow:
-      1px 1px 0 #800000,
-      2px 2px 0 #800000;
-  }
-</style>
+    .text {
+      color: #ffd700;
+      font-size: 18px;
+      text-align: center;
+      text-shadow:
+        1px 1px 0 #7f0000,
+        2px 2px 0 #7f0000;
+      padding: 20px;
+      user-select: none;
+      line-height: 1.2;
+      max-width: 280px;
+      font-weight: 900;
+    }
+  </style>
 </head>
 <body>
-
-<div class="heart">
-  <div class="pixel"></div> <div class="pixel red2"></div> <div class="pixel red2"></div> <div class="pixel"></div> <div class="pixel"></div> <div class="pixel red2"></div> <div class="pixel red2"></div> <div class="pixel"></div>
-  <div class="pixel red2"></div> <div class="pixel red3"></div> <div class="pixel red2"></div> <div class="pixel red2"></div> <div class="pixel red2"></div> <div class="pixel red2"></div> <div class="pixel red3"></div> <div class="pixel red2"></div>
-  <div class="pixel red2"></div> <div class="pixel red2"></div> <div class="pixel red3"></div> <div class="pixel red2"></div> <div class="pixel red2"></div> <div class="pixel red3"></div> <div class="pixel red2"></div> <div class="pixel red2"></div>
-  <div class="pixel red2"></div> <div class="pixel red2"></div> <div class="pixel red2"></div> <div class="pixel red3"></div> <div class="pixel red3"></div> <div class="pixel red2"></div> <div class="pixel red2"></div> <div class="pixel red2"></div>
-  <div class="pixel"></div> <div class="pixel red2"></div> <div class="pixel red2"></div> <div class="pixel red2"></div> <div class="pixel red2"></div> <div class="pixel red2"></div> <div class="pixel red2"></div> <div class="pixel"></div>
-  <div class="pixel"></div> <div class="pixel"></div> <div class="pixel red2"></div> <div class="pixel red2"></div> <div class="pixel red2"></div> <div class="pixel red2"></div> <div class="pixel"></div> <div class="pixel"></div>
-  <div class="pixel"></div> <div class="pixel"></div> <div class="pixel"></div> <div class="pixel red2"></div> <div class="pixel red2"></div> <div class="pixel"></div> <div class="pixel"></div> <div class="pixel"></div>
-</div>
-
-<h1>Volim te, princezo ❤️</h1>
-
+  <div class="heart">
+    <div class="text">
+      Volim te,<br />
+      princezo
+    </div>
+  </div>
 </body>
 </html>
