@@ -2,53 +2,40 @@
 <html lang="sr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Volim te, princezo</title>
+  <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
   <style>
     body {
-      background-color: #111;
       margin: 0;
-      padding: 0;
-      font-family: 'Courier New', monospace;
+      background-color: #0d0d0d;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
       height: 100vh;
-    }
-
-    .heart-container {
-      position: relative;
-      width: 300px;
-      height: 270px;
+      font-family: 'Minecraft', sans-serif;
+      color: #fff;
     }
 
     .heart {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 300px;
-      height: 270px;
-      background: url('https://i.imgur.com/mJrXz7U.png') no-repeat center center;
+      background: url('https://i.imgur.com/mJrXz7U.png') no-repeat center;
       background-size: contain;
+      width: 200px;
+      height: 180px;
       image-rendering: pixelated;
+      margin-bottom: 20px;
     }
 
     .text {
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-size: 1.5rem;
+      font-size: 24px;
+      color: #ff4c4c;
+      text-shadow: 2px 2px #000;
       text-align: center;
-      text-shadow: 0 0 5px red;
     }
   </style>
 </head>
 <body>
-  <div class="heart-container">
-    <div class="heart"></div>
-    <div class="text">Volim te,<br>princezo</div>
-  </div>
+  <div class="heart"></div>
+  <div class="text">Volim te,<br>princezo</div>
 </body>
 </html>
